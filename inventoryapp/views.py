@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 
 
 # Create your views here.
 
 def home(request):
-    
-    template = loader.get_template("home.html")
-    return HttpResponse(template.render())
+    return render(request, 'index.html')
 
-def stock(request):
-    
-    template = loader.get_template("stocks.html")
-    return HttpResponse(template.render())
+def shop(request):
+  return render(request, 'shop.html')
+
+def service(request):
+  return render(request, 'services.html')
