@@ -6,8 +6,10 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html')
 
-def shop(request):
-  return render(request, 'shop.html')
+def shop(request,q):
+ 
+  param = {'id': q}
+  return render(request, 'shop.html',param)
 
 def service(request):
   return render(request, 'services.html')
