@@ -1,0 +1,15 @@
+
+			
+          <!-- <form>
+            <input type="text" name="fname" placeholder=" first name">
+            <input type="text" name="lname" placeholder=" Last name">
+            <input type="email" name="email" placeholder=" email">
+            <textarea name="message" id="" placeholder="enter your Message.."></textarea>
+          </form> -->
+
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button>submit</button>
+          </form>
+

@@ -12,6 +12,17 @@ class Subject(models.Model):
     subjectName = models.CharField(max_length=50)
     subjectcode = models.CharField(max_length=50)
     biodataId = models.ForeignKey(BioData, on_delete=models.CASCADE)
+
+
+class ContactForm(models.Model):
+   fname = models.CharField(max_length=50)
+   lname = models.CharField(max_length=50)
+   email = models.CharField(max_length=50)
+   message = models.CharField(max_length=50)
+   
+
+
+
     
 
     
