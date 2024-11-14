@@ -8,6 +8,7 @@ urlpatterns = [
     path('ourservice/',views.service),
     path('contact/',views.contact),
     path('form/',views.contactForm),
-    path('submitForm', views.submitForm),
-    path('contactList', views.contactList)
+    path('submitForm/', views.submitForm),
+    path('contactList/', views.contactList),
+    path('nin/', views.nin,name='nin'),
 ]

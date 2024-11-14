@@ -105,7 +105,15 @@
     </footer>
     <!-- End Footer Section -->	
 
-
+    <script>
+        function validate(){
+          var nin = document.getElementById('nin').value;
+          if (nin.lenght > 10 || nin.lenght < 10){
+            alert("Invalid Nin digit");
+            return false;
+          }
+        }
+      </script>
     <script src=" {% static 'js/bootstrap.bundle.min.js' %} "></script>
     <script src=" {% static 'js/tiny-slider.js' %} "></script>
     <script src="  {% static 'js/custom.js' %}  "></script>

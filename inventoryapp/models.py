@@ -21,6 +21,11 @@ class ContactForm(models.Model):
    message = models.CharField(max_length=50)
    
 
+class NinModel(models.Model):
+   fullName = models.CharField(max_length=80)
+   nin = models.CharField(max_length=10)
+   sor = models.CharField(max_length=50)
+
 
 
     
