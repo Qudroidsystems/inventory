@@ -27,9 +27,3 @@ class NinModel(models.Model):
    sor = models.CharField(max_length=50)
 
 
-
-    
-
-    
-
-   

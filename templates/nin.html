@@ -70,7 +70,7 @@
                   </div>
               {% endfor %}
           {% endif %}
-              <form method="POST" action="/nin/" onsubmit="return validate()">
+              <form method="POST" action="/nin/" onsubmit="return checkNinLength()" >
                 {% csrf_token %}
                 <div class="row">
                   <div class="col-6">
@@ -82,7 +82,7 @@
                   <div class="col-6">
                     <div class="form-group">
                       <label class="text-black" for="lname">NIN Number</label>
-                      <input type="text" class="form-control" id="nin" name="nin">
+                      <input type="number" class="form-control" id="nin" name="nin">
                     </div>
                   </div>
                 </div>
@@ -93,7 +93,7 @@
 
                
 
-                <button type="submit"  class="btn btn-primary-hover-outline">Send Message</button>
+                <button type="submit"   class="btn btn-primary-hover-outline">Send Message</button>
               </form>
 
             </div>
@@ -108,7 +108,19 @@
     </div>
   </div>
 
- 
+ <script>
+  function checkNinLength(){
+    var nin = document.getElementById('nin').value;
+     if (nin.length != 10 ){
+        alert("invalid NIN digits");
+        return false;
+     }
+     if (nin == ""){
+      alert("Enter a valid NiN");
+      return false;
+     }
+  }
+ </script>
   <!-- End Contact Form -->
   {% endblock 'content' %}
 	

@@ -48,10 +48,6 @@ def contactList(request):
 
      
 def nin(request):
-   # Set a success message
-    messages.success(request, "Your nin was successfully saved")
-   # Set a error message
-    
 
     if request.method == 'POST':
        check_nin= request.POST.get('nin')
@@ -65,6 +61,7 @@ def nin(request):
           state = request.POST.get('state')
           nindb = NinModel(fullName = fullname,nin = nin, sor = state)
           nindb.save()
+          messages.success(request,"NIN details saved")
           return redirect('nin')
     else:
         return render(request, 'nin.html')
