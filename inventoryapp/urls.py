@@ -11,4 +11,5 @@ urlpatterns = [
     path('submitForm/', views.submitForm),
     path('contactList/', views.contactList),
     path('nin/', views.nin,name='nin'),
+    path('ninlist/', views.ninlist),
 ]

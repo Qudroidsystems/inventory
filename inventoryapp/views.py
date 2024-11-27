@@ -66,5 +66,8 @@ def nin(request):
     else:
         return render(request, 'nin.html')
 
-  
+def ninlist(request):
+  all_nins = NinModel.objects.all
+  return render(request, 'ninlist.html',{'nins': all_nins})
+
   
