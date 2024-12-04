@@ -5,8 +5,20 @@
 		<!-- Start Hero Section -->
 			<div class="hero">
 				<div class="container">
-			
-          
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Contact</h1>
+								<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="images/couch.png" class="img-fluid">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		<!-- End Hero Section -->
@@ -64,29 +76,34 @@
                 </div>
               </div>
 
-             <table border="1">
-              <thead >
-                <tr>
-                  <th>FIRST NAME</th> 
-                  <th>LAST NAME</th> 
-                  <th>EMAIL</th> 
-                  <th>MESSAGE</th>
-                  <th>ACTIONS</th> 
-                </tr>
-              </thead>
-              <body>
-                {% for contact in contacts %}
-                <tr>
-                  <td>{{ contact.fname }}</td> 
-                  <td>{{ contact.lname }}</td> 
-                  <td>{{ contact.email }}</td> 
-                  <td> <textarea>{{ contact.message }}</textarea>  </td>
-                  <td> <a href="{% url 'editcontact' contact.id %}">Edit</a> | <a href="#">Delete</a></td> 
-                </tr>
-                {% endfor %}
-              </body>
-             </table>
-            
+              <form>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="text-black" for="fname">First name</label>
+                      <input type="text" class="form-control" id="fname" name="fname">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="text-black" for="lname">Last name</label>
+                      <input type="text" class="form-control" id="lname" name="lname">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="text-black" for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="form-group mb-5">
+                  <label class="text-black" for="message">Message</label>
+                  <textarea name="" class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
+              </form>
+
             </div>
 
           </div>

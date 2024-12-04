@@ -12,4 +12,6 @@ urlpatterns = [
     path('contactList/', views.contactList),
     path('nin/', views.nin,name='nin'),
     path('ninlist/', views.ninlist),
+    path('editcontact/<str:pk>/',views.editcontact, name='editcontact')
+
 ]

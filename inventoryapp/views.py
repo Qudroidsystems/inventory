@@ -46,6 +46,14 @@ def contactList(request):
   all_contacts = ContactForm.objects.all
   return render(request, 'contactList.html',{'contacts': all_contacts})
 
+def editcontact(request):
+   all_contacts = ContactForm.objects.filter(id=pk)
+   return render(request, 'contactList.html')
+   
+   
+   
+   
+
      
 def nin(request):
 
