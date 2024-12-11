@@ -62,29 +62,35 @@
                 </div> <!-- /.service -->
               </div>
             </div>
-
+{{ person }}
            <table border="1">
             <thead >
               <tr>
                 <th>FULL NAME</th> 
                 <th>NIN NUMBER</th> 
                 <th>STATE</th> 
+                <th>Action</th> 
               </tr>
             </thead>
             <body>
-              {% for nin in nins %}
+              {% for p in person %}
               <tr>
-                <td>{{ nin.fullName }}</td> 
-                <td>{{ nin.nin }}</td> 
-                <td>{{ nin.sor }}</td> 
-                <td> <a href="{% url 'editnin' nin.id %}">Edit</a> | <a href="{% url 'deletenin' nin.id %}">Delete</a></td> 
+                <form action="/updatenin/" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="ninid" value="{{p.id}}">
+                     <td><input type="text" name="fullname" value="{{ p.fullName }}"></td> 
+                    <td> <input type="text" name="nin" value="{{ p.nin }}"></td> 
+                    <td> <input type="text" name="sor" value="{{ p.sor }}"></td>  
+                    <td> <button type="submit">Update</button></td>
+                </form>
+               
               </tr>
               {% endfor %}
             </body>
            </table>
           
           </div>
-
+           <a href="/ninlist/">back to Nin Lists</a>
         </div>
 
       </div>

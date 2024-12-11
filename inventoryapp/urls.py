@@ -11,7 +11,9 @@ urlpatterns = [
     path('submitForm/', views.submitForm),
     path('contactList/', views.contactList),
     path('nin/', views.nin,name='nin'),
-    path('ninlist/', views.ninlist),
+    path('ninlist/', views.ninlist,name='ninlist'),
+    path('editnin/<str:ninid>', views.editnin,name='editnin'),
+    path('updatenin/', views.updatenin,name='updatenin'),
+    path('deletenin/<str:ninid>', views.deletenin,name='deletenin'),
     path('editcontact/<str:pk>/',views.editcontact, name='editcontact')
-
 ]
